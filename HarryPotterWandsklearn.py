@@ -1,12 +1,14 @@
 from PIL import Image
-from sklearn.externals import joblib
+import joblib
 import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
 
-# Loading the processed last frame form Desktop
-img = Image.open("/home/pi/Desktop/lastframe.jpg")
+# Loading the prpiocessed last frame form Desktop
+img = Image.open("/Users/mayankraichura/Desktop/lastframe.jpg")
 
 # Loading the SVM classifier
-clf = joblib.load("/home/pi/Desktop/alphabet_classifier.pkl")
+clf = joblib.load("alphabet_classifier.joblib")
 
 # Converting image to numpy array
 img = np.array(img)
